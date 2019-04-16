@@ -132,7 +132,9 @@ void graphe::afficher() const
     {
         std::cout <<"  Sommet : ";
        //it->second->afficherData();
-      it= afficherData();
+
+      it=Sommet.afficherData();
+      it=Sommet.afficherVoisins()
       // it->second->afficherVoisins();
         std::cout<<"" <<std::endl;
     }
