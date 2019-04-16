@@ -15,7 +15,7 @@ graphe::graphe(std::string nomFichier,std::string nomFichierPoids)
 
     if ( ifs.fail() )
         throw std::runtime_error("Probleme lecture ordre du graphe");
-    std::string id;
+    int id;
     double x,y;
     //lecture des sommets
     for (int i=0; i<ordre; ++i)
@@ -29,7 +29,7 @@ graphe::graphe(std::string nomFichier,std::string nomFichierPoids)
         ifs>>y;
         if(ifs.fail())
             throw std::runtime_error("Probleme lecture données sommet");
-        m_sommets.insert({id,new Sommet{id,x,y}});
+        m_sommets.push_back(new Sommet(id,x,y));
     }
 
     int taille;
@@ -37,7 +37,7 @@ graphe::graphe(std::string nomFichier,std::string nomFichierPoids)
 
     if ( ifs.fail() )
         throw std::runtime_error("Probleme lecture taille du graphe-Arret");
-    std::string id_voisin;
+    int id_voisin;
     //lecture des aretes
     for (int i=0; i<taille; ++i)
     {
@@ -52,8 +52,11 @@ graphe::graphe(std::string nomFichier,std::string nomFichierPoids)
         if(ifs.fail())
             throw std::runtime_error("Probleme lecture arete sommet 2-Arret");
 
-        (m_sommets.find(id))->second->ajouterVoisin((m_sommets.find(id_voisin))->second);
+
+
+       /* (m_sommets.find(id))->second->ajouterVoisin((m_sommets.find(id_voisin))->second);
         (m_sommets.find(id_voisin))->second->ajouterVoisin((m_sommets.find(id))->second);
+        */
     }
 
     ///POUR POIDS DES ARRETS
@@ -76,7 +79,7 @@ graphe::graphe(std::string nomFichier,std::string nomFichierPoids)
     {
 
 
-        std::string arret;
+        int arret;
         ifs>>arret;
 
 
@@ -102,7 +105,7 @@ graphe::graphe(std::string nomFichier,std::string nomFichierPoids)
 
         ifs1>>poids2;
 
-         m_arret.insert({arret,new Arret{arret,poids1,poids2}});
+         m_arret.push_back({new Arret{arret,poids1,poids2}});
 
        // m_arrets.push_back({new Arret{arret,poids1,poids2}});
 
@@ -128,16 +131,17 @@ void graphe::afficher() const
     for ( auto it = m_sommets.begin(); it != m_sommets.end(); ++it)
     {
         std::cout <<"  Sommet : ";
-        it->second->afficherData();
-        it->second->afficherVoisins();
+       //it->second->afficherData();
+      it= afficherData();
+      // it->second->afficherVoisins();
         std::cout<<"" <<std::endl;
     }
 
     for ( auto ab = m_arret.begin(); ab != m_arret.end(); ++ab)
     {
 
-        ab->second->afficherDataA();
-        ab->second->afficherArrets();
+     //   ab->second->afficherDataA();
+     //   ab->second->afficherArrets();
         std::cout<<" "<< std::endl;
 
     }
@@ -153,55 +157,8 @@ void graphe::parcoursKruskal(std::string id) const
 }
 */
 
-void graphe::parcoursBFS(std::string id) const
-{
-    Sommet*s0=(m_sommets.find(id))->second;
-    std::unordered_map<std::string,std::string> l_pred;
-    l_pred=s0->parcoursBFS();
-}
-void graphe::afficherBFS(std::string id) const
-{
-    Sommet*s0=(m_sommets.find(id))->second;
-    std::unordered_map<std::string,std::string> l_pred;
-    std::cout<<"parcoursBFS a partir de "<<id<<" :"<<std::endl;
-    l_pred=s0->parcoursBFS();
-    for(auto s:l_pred)
-    {
-        std::cout<<s.first<<" <--- ";
-        std::pair<std::string,std::string> pred=s;
-        while(pred.second!=id)
-        {
-            pred=*l_pred.find(pred.second);
-            std::cout<<pred.first<<" <--- ";
-        }
-        std::cout<<id<<std::endl;
-    }
-}
 
-void graphe::parcoursDFS(std::string id) const
-{
-    Sommet*s0=(m_sommets.find(id))->second;
-    std::unordered_map<std::string,std::string> l_pred;
-    l_pred=s0->parcoursDFS();
-}
-void graphe::afficherDFS(std::string id) const
-{
-    Sommet*s0=(m_sommets.find(id))->second;
-    std::unordered_map<std::string,std::string> l_pred;
-    std::cout<<"parcoursDFS a partir de "<<id<<" :"<<std::endl;
-    l_pred=s0->parcoursDFS();
-    for(auto s:l_pred)
-    {
-        std::cout<<s.first<<" <--- ";
-        std::pair<std::string,std::string> pred=s;
-        while(pred.second!=id)
-        {
-            pred=*l_pred.find(pred.second);
-            std::cout<<pred.first<<" <--- ";
-        }
-        std::cout<<id<<std::endl;
-    }
-}
+/*
 int graphe::rechercher_afficherToutesCC() const
 {
     int i=0;
@@ -233,7 +190,7 @@ int graphe::rechercher_afficherToutesCC() const
     return i;
 }
 
-
+*/
 
 void graphe::dessiner()
 {

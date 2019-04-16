@@ -8,16 +8,14 @@
 class Sommet
 {
     public:
-        Sommet(std::string,double,double);
+        Sommet(int,double,double);
         void ajouterVoisin(const Sommet*);
         void afficherData() const;
         void afficherVoisins() const;
         int getDegre() const;
 
 
-        std::unordered_map<std::string,std::string> parcoursBFS() const;
-        std::unordered_map<std::string,std::string> parcoursDFS() const;
-        std::unordered_set<std::string> rechercherCC() const;
+  //      std::unordered_set<std::string> rechercherCC() const;
 
         ~Sommet();
 
@@ -25,7 +23,7 @@ class Sommet
 
     private:
         std::vector<const Sommet*> m_voisins;
-        std::string m_id;
+        int m_id;
         double m_x, m_y;
 
 };

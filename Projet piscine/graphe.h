@@ -33,8 +33,8 @@ class graphe
 
     private:
 
-        std::unordered_map<std::string,Sommet*> m_sommets;
-        std::unordered_map<std::string,Arret*> m_arret;
+        std::vector<Sommet*> m_sommets;
+        std::vector<Arret*> m_arret;
 
 };
 

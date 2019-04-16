@@ -11,7 +11,7 @@ Arret::Arret(std::string idA, std::pair < double,double > poids): m_idA{idA},m_p
 
 }
 */
-Arret::Arret(std::string idA, double poids1, double poids2): m_idA{idA},m_poids1{poids1},m_poids2{poids2}
+Arret::Arret(int idA, double poids1, double poids2): m_idA{idA},m_poids1{poids1},m_poids2{poids2}
 {
 
 }

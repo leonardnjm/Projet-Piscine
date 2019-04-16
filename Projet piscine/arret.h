@@ -10,7 +10,7 @@ class Arret
 {
     public:
        // Arret(std::string,std::pair < double,double > poids);
-       Arret(std::string,double,double);
+       Arret(int ,double,double);
         void afficherDataA() const;
         void ajouterArret(const Arret* arrets);
         void afficherArrets() const;
