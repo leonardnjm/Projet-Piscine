@@ -2,7 +2,9 @@
 #define GRAPHE_H
 #include <string>
 #include <unordered_map>
+#include <unordered_set>
 #include "sommet.h"
+#include "arret.h"
 
 class graphe
 {
@@ -32,6 +34,7 @@ class graphe
     private:
 
         std::unordered_map<std::string,Sommet*> m_sommets;
+        std::unordered_map<std::string,Arret*> m_arret;
 
 };
 

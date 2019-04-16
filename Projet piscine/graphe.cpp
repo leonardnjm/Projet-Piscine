@@ -2,6 +2,7 @@
 #include <iostream>
 #include "graphe.h"
 #include "svgfile.h"
+#include "arret.h"
 
 graphe::graphe(std::string nomFichier,std::string nomFichierPoids)
 {
@@ -60,18 +61,22 @@ graphe::graphe(std::string nomFichier,std::string nomFichierPoids)
     if (!ifs1)
         throw std::runtime_error( "Impossible d'ouvrir en lecture -Arret " + nomFichierPoids );
 
-        int nbArret;
-        ifs1>>nbArret;
+        int nbArrets;
+        ifs1>>nbArrets;
 
         int nbCond;
         ifs1>>nbCond;
 
     double poids1,poids2;
-    int id1;
+  //  int id1;
 
-        for (int i=0; i<nbArret; ++i)
+        std::vector <double> vec_Poids;
+
+        for (int i=0; i<nbArrets; ++i)
     {
-        int arret;
+
+
+        std::string arret;
         ifs>>arret;
 
 
@@ -93,7 +98,18 @@ graphe::graphe(std::string nomFichier,std::string nomFichierPoids)
         ifs1>>poids1;
 
 
+
+
         ifs1>>poids2;
+
+         m_arret.insert({arret,new Arret{arret,poids1,poids2}});
+
+       // m_arrets.push_back({new Arret{arret,poids1,poids2}});
+
+
+    //    m_arrets.insert({arret,new Arret{arret,poids1,poids2}});
+
+    //    m_arrets.find(arret))->second->ajouterArret((m_arrets.find(poids1))->second);
 
     }
 
@@ -116,6 +132,16 @@ void graphe::afficher() const
         it->second->afficherVoisins();
         std::cout<<"" <<std::endl;
     }
+
+    for ( auto ab = m_arret.begin(); ab != m_arret.end(); ++ab)
+    {
+
+        ab->second->afficherDataA();
+        ab->second->afficherArrets();
+        std::cout<<" "<< std::endl;
+
+    }
+
 }
 /*
 void graphe::parcoursKruskal(std::string id) const
