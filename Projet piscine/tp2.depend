@@ -1,0 +1,135 @@
+# depslib dependency file v1.0
+1551644056 source:d:\cours\tg\sujetstp\tp2\tp2\main.cpp
+	<iostream>
+	"graphe.h"
+
+1551643974 source:d:\cours\tg\sujetstp\tp2\tp2\sommet.cpp
+	<iostream>
+	<queue>
+	<stack>
+	<unordered_map>
+	<unordered_set>
+	"sommet.h"
+
+1551643975 d:\cours\tg\sujetstp\tp2\tp2\sommet.h
+	<string>
+	<vector>
+	<unordered_map>
+	<unordered_set>
+
+1551643974 source:d:\cours\tg\sujetstp\tp2\tp2\graphe.cpp
+	<fstream>
+	<iostream>
+	"graphe.h"
+
+1551643974 d:\cours\tg\sujetstp\tp2\tp2\graphe.h
+	<string>
+	<unordered_map>
+	"sommet.h"
+
+1552825453 source:c:\users\code\desktop\c++ ing2 s2\tp2\graphe.cpp
+	<fstream>
+	<iostream>
+	"graphe.h"
+
+1552741599 c:\users\code\desktop\c++ ing2 s2\tp2\graphe.h
+	<string>
+	<unordered_map>
+	"sommet.h"
+
+1552740688 c:\users\code\desktop\c++ ing2 s2\tp2\sommet.h
+	<string>
+	<vector>
+	<unordered_map>
+	<unordered_set>
+
+1552762637 source:c:\users\code\desktop\c++ ing2 s2\tp2\main.cpp
+	<iostream>
+	"graphe.h"
+
+1552763056 source:c:\users\code\desktop\c++ ing2 s2\tp2\sommet.cpp
+	<iostream>
+	<queue>
+	<stack>
+	<unordered_map>
+	<unordered_set>
+	"sommet.h"
+
+1555367918 source:c:\users\leo\desktop\tp2-laure\graphe.cpp
+	<fstream>
+	<iostream>
+	"graphe.h"
+	"svgfile.h"
+
+1555367907 c:\users\leo\desktop\tp2-laure\graphe.h
+	<string>
+	<unordered_map>
+	"sommet.h"
+
+1555367907 c:\users\leo\desktop\tp2-laure\sommet.h
+	<string>
+	<vector>
+	<unordered_map>
+	<unordered_set>
+
+1555367402 source:c:\users\leo\desktop\tp2-laure\main.cpp
+	<iostream>
+	"graphe.h"
+	"svgfile.h"
+
+1555367511 source:c:\users\leo\desktop\tp2-laure\sommet.cpp
+	<iostream>
+	<queue>
+	<stack>
+	<unordered_map>
+	<unordered_set>
+	"sommet.h"
+
+1555352245 source:c:\users\leo\desktop\tp2-laure\svgfile.cpp
+	<iostream>
+	<sstream>
+
+1555352395 c:\users\leo\desktop\tp2-laure\svgfile.h
+	<string>
+	<fstream>
+	<set>
+
+1555367918 source:c:\users\leo\desktop\projet piscine\graphe.cpp
+	<fstream>
+	<iostream>
+	"graphe.h"
+	"svgfile.h"
+
+1555369495 c:\users\leo\desktop\projet piscine\graphe.h
+	<string>
+	<unordered_map>
+	"sommet.h"
+
+1555367907 c:\users\leo\desktop\projet piscine\sommet.h
+	<string>
+	<vector>
+	<unordered_map>
+	<unordered_set>
+
+1555352395 c:\users\leo\desktop\projet piscine\svgfile.h
+	<string>
+	<fstream>
+	<set>
+
+1555367511 source:c:\users\leo\desktop\projet piscine\sommet.cpp
+	<iostream>
+	<queue>
+	<stack>
+	<unordered_map>
+	<unordered_set>
+	"sommet.h"
+
+1555352245 source:c:\users\leo\desktop\projet piscine\svgfile.cpp
+	<iostream>
+	<sstream>
+
+1555368052 source:c:\users\leo\desktop\projet piscine\main.cpp
+	<iostream>
+	"graphe.h"
+	"svgfile.h"
+
