@@ -4,10 +4,18 @@
 #include "svgfile.h"
 #include "arret.h"
 
+
 graphe::graphe(std::string nomFichier,std::string nomFichierPoids)
 {
     std::ifstream ifs{nomFichier};
     std::ifstream ifs1{nomFichierPoids};
+
+    double indSommet1, indSommet2;
+    Sommet* sommet1;
+    Sommet* sommet2;
+    Sommet Sommet1,Sommet2;
+
+
     if (!ifs)
         throw std::runtime_error( "Impossible d'ouvrir en lecture " + nomFichier );
     int ordre;
@@ -52,14 +60,12 @@ graphe::graphe(std::string nomFichier,std::string nomFichierPoids)
         if(ifs.fail())
             throw std::runtime_error("Probleme lecture arete sommet 2-Arret");
 
+        sommet1= m_sommets[indSommet1];
+        Sommet1= *sommet1;
+        sommet2= m_sommets[indSommet2];
+        Sommet2= *sommet2;
 
-
-       /* (m_sommets.find(id))->second->ajouterVoisin((m_sommets.find(id_voisin))->second);
-        (m_sommets.find(id_voisin))->second->ajouterVoisin((m_sommets.find(id))->second);
-        */
     }
-
-    ///POUR POIDS DES ARRETS
 
     if (!ifs1)
         throw std::runtime_error( "Impossible d'ouvrir en lecture -Arret " + nomFichierPoids );
@@ -82,37 +88,11 @@ graphe::graphe(std::string nomFichier,std::string nomFichierPoids)
         int arret;
         ifs>>arret;
 
-
-        //lecture des ids des deux extrémités
-     //   ifs>>id1;
-     //   if(ifs.fail())
-     //       throw std::runtime_error("Probleme lecture arete sommet 1-Arret");
-
-
-        /*
-        ifs>>id_voisin;
-        if(ifs.fail())
-            throw std::runtime_error("Probleme lecture arete sommet 2-Arret");
-        //ajouter chaque extrémité à la liste des voisins de l'autre (graphe non orienté)
-        (m_sommets.find(id))->second->ajouterVoisin((m_sommets.find(id_voisin))->second);
-        (m_sommets.find(id_voisin))->second->ajouterVoisin((m_sommets.find(id))->second);//remove si graphe orienté
-        */
-
         ifs1>>poids1;
-
-
-
 
         ifs1>>poids2;
 
-         m_arret.push_back({new Arret{arret,poids1,poids2}});
-
-       // m_arrets.push_back({new Arret{arret,poids1,poids2}});
-
-
-    //    m_arrets.insert({arret,new Arret{arret,poids1,poids2}});
-
-    //    m_arrets.find(arret))->second->ajouterArret((m_arrets.find(poids1))->second);
+         m_arret.push_back({new Arret{arret,Sommet1,Sommet2,poids1,poids2}});
 
     }
 
@@ -125,30 +105,29 @@ int graphe:: getOrdre() const
 
 void graphe::afficher() const
 {
-    std::cout<<"graphe : "<<std::endl;
-    std::cout<<"  Ordre : "<< getOrdre()<<std::endl;
+    std::cout<<"graphe : "<<std::endl<<std::endl;
+    std::cout<<"  Ordre : "<< getOrdre()<<std::endl<<std::endl<<std::endl;
 
-    for ( auto it = m_sommets.begin(); it != m_sommets.end(); ++it)
+    for ( auto it : m_sommets)
     {
         std::cout <<"  Sommet : ";
-       //it->second->afficherData();
 
-      it=Sommet.afficherData();
-      it=Sommet.afficherVoisins()
-      // it->second->afficherVoisins();
-        std::cout<<"" <<std::endl;
+        it->afficherData();
+
+        std::cout<<" " <<std::endl;
     }
 
-    for ( auto ab = m_arret.begin(); ab != m_arret.end(); ++ab)
+    for ( auto ab : m_arret)
     {
 
-     //   ab->second->afficherDataA();
-     //   ab->second->afficherArrets();
+    //    ab->afficherDataA();
+
         std::cout<<" "<< std::endl;
 
     }
 
 }
+
 /*
 void graphe::parcoursKruskal(std::string id) const
 {

@@ -4,18 +4,18 @@
 #include <vector>
 #include <unordered_map>
 #include <unordered_set>
+#include "sommet.h"
 
 
 class Arret
 {
     public:
        // Arret(std::string,std::pair < double,double > poids);
-       Arret(int ,double,double);
+       Arret(int,Sommet,Sommet,double,double);
+
         void afficherDataA() const;
-        void ajouterArret(const Arret* arrets);
-        void afficherArrets() const;
-
-
+    //    void ajouterArret(const Arret* arrets);
+    //   void afficherArrets() const;
 
         ~Arret();
 
@@ -23,8 +23,8 @@ class Arret
     protected:
 
     private:
-        std::vector<const Arret*> m_arrets;
-        std::string m_idA;
+    //    std::vector<const Arret*> m_arrets;
+        int m_idA;
         double m_poids1, m_poids2;
 
 };

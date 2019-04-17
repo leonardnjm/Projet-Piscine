@@ -9,6 +9,7 @@ class Sommet
 {
     public:
         Sommet(int,double,double);
+        Sommet();
         void ajouterVoisin(const Sommet*);
         void afficherData() const;
         void afficherVoisins() const;
