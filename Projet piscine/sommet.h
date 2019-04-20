@@ -13,6 +13,10 @@ class Sommet
         void ajouterVoisin(const Sommet*);
         void afficherData() const;
         void afficherVoisins() const;
+        double getX();
+        double getY();
+        int getId();
+
         int getDegre() const;
 
 

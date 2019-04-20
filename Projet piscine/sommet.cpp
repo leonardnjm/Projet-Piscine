@@ -18,7 +18,7 @@ void Sommet::ajouterVoisin(const Sommet* voisin)
 }
 void Sommet::afficherData() const
 {
-    std::cout<<"    "<<m_id<<" : "<<"(x,y)=("<<m_x<<","<<m_y<<")"<<std::endl;
+    std::cout<<" "<<m_id<<" : "<<"(x,y)=("<<m_x<<","<<m_y<<")"<<std::endl;
 }
 void Sommet::afficherVoisins() const
 {
@@ -29,10 +29,23 @@ void Sommet::afficherVoisins() const
         v->afficherData();
     }
 }
-
+/*
 int Sommet:: getDegre() const
     {
         return (int)m_voisins.size();
+    }
+*/
+    double Sommet::getX()
+    {
+        return m_x;
+    }
+    double Sommet::getY()
+    {
+        return m_y;
+    }
+    int Sommet::getId()
+    {
+        return m_id;
     }
 
 /*

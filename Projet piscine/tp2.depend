@@ -94,21 +94,27 @@
 	<fstream>
 	<set>
 
-1555495559 source:c:\users\leo\desktop\projet piscine\graphe.cpp
+1555729720 source:c:\users\leo\desktop\projet piscine\graphe.cpp
 	<fstream>
 	<iostream>
+	<math.h>
 	"graphe.h"
 	"svgfile.h"
 	"arret.h"
+	<bitset>
+	"algorithm"
 
-1555435885 c:\users\leo\desktop\projet piscine\graphe.h
+1555729720 c:\users\leo\desktop\projet piscine\graphe.h
 	<string>
 	<unordered_map>
 	<unordered_set>
-	"sommet.h"
 	"arret.h"
+	"svgfile.h"
+	"algorithm"
+	<set>
+	<list>
 
-1555495600 c:\users\leo\desktop\projet piscine\sommet.h
+1555523743 c:\users\leo\desktop\projet piscine\sommet.h
 	<string>
 	<vector>
 	<unordered_map>
@@ -119,7 +125,7 @@
 	<fstream>
 	<set>
 
-1555445612 source:c:\users\leo\desktop\projet piscine\sommet.cpp
+1555635809 source:c:\users\leo\desktop\projet piscine\sommet.cpp
 	<iostream>
 	<queue>
 	<stack>
@@ -131,20 +137,21 @@
 	<iostream>
 	<sstream>
 
-1555427801 source:c:\users\leo\desktop\projet piscine\main.cpp
+1555729746 source:c:\users\leo\desktop\projet piscine\main.cpp
 	<iostream>
 	"graphe.h"
 	"svgfile.h"
 
-1555445357 source:c:\users\leo\desktop\projet piscine\arret.cpp
+1555640729 source:c:\users\leo\desktop\projet piscine\arret.cpp
 	<iostream>
 	<string>
 	<vector>
 	<unordered_map>
 	<unordered_set>
 	"arret.h"
+	"graphe.h"
 
-1555445522 c:\users\leo\desktop\projet piscine\arret.h
+1555640698 c:\users\leo\desktop\projet piscine\arret.h
 	<string>
 	<vector>
 	<unordered_map>

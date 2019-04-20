@@ -3,8 +3,12 @@
 #include <string>
 #include <unordered_map>
 #include <unordered_set>
-#include "sommet.h":
 #include "arret.h"
+#include "svgfile.h"
+#include "algorithm"
+#include <set>
+#include <list>
+
 
 class graphe
 {
@@ -13,17 +17,19 @@ class graphe
         graphe(std::string,std::string);
         ~graphe();
         void afficher() const;
-        void parcoursBFS(std::string) const;
-        void afficherBFS(std::string) const;
-        void parcoursDFS(std::string) const;
-        void afficherDFS(std::string) const;
 
         void parcoursKruskal(std::string) const;
         void affichageKruskal(std::string) const;
 
-        void dessiner();
+        std::vector<Arret*> Prim();
+        void trieurpoid1();
 
-        int rechercher_afficherToutesCC() const;
+        void dessiner(Svgfile &svgout);
+
+        void bruteForce();
+        void pareto();
+
+       // int rechercher_afficherToutesCC() const;
         int getOrdre() const;
         int isEulerien()const;
 

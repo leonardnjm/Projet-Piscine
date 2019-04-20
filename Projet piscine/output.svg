@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1000" height="800">
 
+<line x1="100" y1="100" x2="200" y2="100" stroke="rgb(52,104,237)" />
+<text x="150" y="100" fill="rgb(160,33,11)" >8</text>
+<line x1="100" y1="100" x2="100" y2="200" stroke="rgb(52,104,237)" />
+<text x="100" y="150" fill="rgb(160,33,11)" >2</text>
+<line x1="200" y1="100" x2="100" y2="200" stroke="rgb(52,104,237)" />
+<text x="150" y="150" fill="rgb(160,33,11)" >3</text>
+<line x1="200" y1="100" x2="200" y2="200" stroke="rgb(52,104,237)" />
+<text x="200" y="150" fill="rgb(160,33,11)" >8</text>
+<line x1="100" y1="200" x2="200" y2="200" stroke="rgb(52,104,237)" />
+<text x="150" y="200" fill="rgb(160,33,11)" >6</text>
+<circle cx="100" cy="100" r="10" fill="rgb(70,15,142)" />
+<text x="95" y="105" fill="rgb(237,63,33)" >0</text>
+<circle cx="200" cy="100" r="10" fill="rgb(70,15,142)" />
+<text x="195" y="105" fill="rgb(237,63,33)" >1</text>
+<circle cx="100" cy="200" r="10" fill="rgb(70,15,142)" />
+<text x="95" y="205" fill="rgb(237,63,33)" >2</text>
+<circle cx="200" cy="200" r="10" fill="rgb(70,15,142)" />
+<text x="195" y="205" fill="rgb(237,63,33)" >3</text>
 
 
 </svg>
